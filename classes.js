@@ -58,3 +58,37 @@ a.__proto__ = {
     }
 }
 a.run();
+
+
+// Learn Static Methods and Getters, Setters
+
+// When we required a method which we need to create inside class but don't give object to give it access it only use bt class name
+// then we define method as static method inside class
+
+class Employee{
+    constructor(location){
+        this.location = location;
+        Employee.locationCode(this.location);
+    }
+
+    get getCode(){
+        return this.code;
+    }
+
+    set setCode(code){
+        this.code = code;
+    }
+
+
+    static locationCode(location){
+        if(location=="NOIDA"){
+            this.code = "EE";
+        }else{
+            this.code = "AE"
+        }
+
+        console.log("Location Code is "+this.code);
+    }
+}
+
+let e1 = new Employee("NOIDA");
